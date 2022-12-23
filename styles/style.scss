@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+$light: #F2F1F4;
+$lightAccent: #88A4A5;
+$main: #64747E;
+$darkAccent: #7E96A4;
+$dark: #12293B;
+$success: #539d5e;
+$warning: #d18d26;
+$danger: #f44336;
+
+$size: 16px;
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-size: $size;
+  background: darken($dark, 3%);
+  font-family: 'Poppins', sans-serif;
+  color: $light;
+}
+
+header {
+  background: darken($dark, 10%);
+  padding: 1rem 2rem;
+  box-shadow: 0.2rem 0.2rem 1rem $dark;
+}
+
+header > h1 {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.kanban__container {
+  display: flex;
+  gap: 2.5rem;
+  padding: 2rem 4rem;
+  overflow-y: auto;
+}
+
+.kanban__section {
+  flex: 1;
+  min-width: 350px;
+}
+
+.kanban__section__header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.5rem;
+}
+
+.item__count {
+  font-size: 0.8rem;
+}
+
+.status__dot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  display: inline-block;
+
+  &.todo {
+    background: $lightAccent;
+  }
+
+  &.progress {
+    background: $warning;
+  }
+
+  &.done {
+    background: $success;
+  }
+}
+
+.kanban__section__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+
+  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+
+  &.drop {
+    border: 2px dashed #FFF;
+  }
+}
+
+.add__task {
+  cursor: pointer;
+
+  width: 100%;
+
+  border-radius: 0.4rem;
+  border: 2px solid $main;
+  background: transparent;
+
+  padding: 0.9rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  font-size: 1rem;
+  font-weight: 700;
+  color: $light;
+}
+
+.task {
+  width: 100%;
+  background: lighten($dark, 5%);
+
+  padding: 1.3rem 1rem;
+  border-radius: 0.4rem;
+
+  color: $light;
+  font-weight: 700;
+
+  cursor: grab;
+  transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  &.dragging {
+    opacity: .5;
+    transform: scale(.8);
+  }
+}
+
+.sortable-chosen {
+  box-shadow: 8px 8px 32px #e1e1e1;
+}
+
+/* Class name for the dragging item */
+.sortable-drag {
+  opacity: 0;
+}
+
+.add__task__container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  margin-bottom: 1.5rem;
+
+  & button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $success;
+    color: $light;
+    border: none;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    padding: 1.1rem;
+
+    border-radius: 0.4rem;
+
+    cursor: pointer;
+  }
+}

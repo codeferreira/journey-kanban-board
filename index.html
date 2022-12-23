@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kanban</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reseter.css">
+  <link rel="stylesheet" href="/styles/style.css">
+  <script src="https://unpkg.com/phosphor-icons"></script>
+  <script src="src/app.js" type="module" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Kanban Board</h1>
+  </header>
+  <main class="kanban__container">
+    <section class="kanban__section">
+      <section class="kanban__section__header">
+        <div class="status__dot todo"></div> 
+        <h3>To Do <span id="todo-items" class="item__count">(0)</span></h3>
+      </section>
+      <form id="add-new-task" name="new-task" class="add__task__container">
+        <input class="add__task" name="description" id="task-description" placeholder="Add new task"></input>
+        <button type="submit"><i class="ph-plus-fill"></i></button>
+      </form>
+      <section id="todo" class="kanban__section__body">
+      </section>
+    </section>
+    <section class="kanban__section">
+      <section class="kanban__section__header">
+        <div class="status__dot progress"></div> 
+        <h3>In Progress <span id="progress-items" class="item__count">(0)</span></h3>
+      </section>
+      <section id="in-progress" class="kanban__section__body">
+      </section>
+    </section>
+    <section  class="kanban__section">
+      <section class="kanban__section__header">
+        <div class="status__dot done"></div> 
+        <h3>Done <span id="done-items" class="item__count">(0)</span></h3>
+      </section>
+      <section id="done" class="kanban__section__body">
+      </section>
+    </section>
+  </main>
+</body>
+</html>

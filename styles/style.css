@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-size: 16px;
+  background: #0e212f;
+  font-family: "Poppins", sans-serif;
+  color: #F2F1F4;
+}
+
+header {
+  background: #060e14;
+  padding: 1rem 2rem;
+  box-shadow: 0.2rem 0.2rem 1rem #12293B;
+}
+
+header > h1 {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.kanban__container {
+  display: flex;
+  gap: 2.5rem;
+  padding: 2rem 4rem;
+  overflow-y: auto;
+}
+
+.kanban__section {
+  flex: 1;
+  min-width: 350px;
+}
+
+.kanban__section__header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.5rem;
+}
+
+.item__count {
+  font-size: 0.8rem;
+}
+
+.status__dot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  display: inline-block;
+}
+.status__dot.todo {
+  background: #88A4A5;
+}
+.status__dot.progress {
+  background: #d18d26;
+}
+.status__dot.done {
+  background: #539d5e;
+}
+
+.kanban__section__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.kanban__section__body.drop {
+  border: 2px dashed #FFF;
+}
+
+.add__task {
+  cursor: pointer;
+  width: 100%;
+  border-radius: 0.4rem;
+  border: 2px solid #64747E;
+  background: transparent;
+  padding: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #F2F1F4;
+}
+
+.task {
+  width: 100%;
+  background: #18374f;
+  padding: 1.3rem 1rem;
+  border-radius: 0.4rem;
+  color: #F2F1F4;
+  font-weight: 700;
+  cursor: -webkit-grab;
+  cursor: grab;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.task:active {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+.task.dragging {
+  opacity: 0.5;
+  transform: scale(0.8);
+}
+
+.sortable-chosen {
+  box-shadow: 8px 8px 32px #e1e1e1;
+}
+
+/* Class name for the dragging item */
+.sortable-drag {
+  opacity: 0;
+}
+
+.add__task__container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.add__task__container button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #539d5e;
+  color: #F2F1F4;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 1.1rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
